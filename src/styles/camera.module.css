@@ -1,0 +1,16 @@
+.cameraContainer {
+  position: relative;
+}
+
+/* .webcam {
+  /* Webcamコンポーネントのスタイル */
+/* } */
+
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 必要に応じて他のスタイルを追加 */
+}

@@ -8,15 +8,10 @@ import styled from "styled-components";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const StyledHello = styled.h1`
-  color: red;
-`;
-color: red:;
 export default function Home() {
   return (
     <>
       <header>{/* <h1>カメラアプリ</h1> */}</header>
-      <StyledHello>aaaaa</StyledHello>
       <Link href="/camera">START</Link>
     </>
   );
