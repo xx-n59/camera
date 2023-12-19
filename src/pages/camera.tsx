@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback } from "react";
-import Webcam, { WebcamProps } from "react-webcam";
+import Webcam from "react-webcam";
 import Image from "next/image";
 import Styles from "../styles/camera.module.css";
 import { toPng } from "html-to-image";
@@ -33,6 +33,7 @@ export default function Camera() {
     toPng(toImgRef.current, { cacheBust: true })
       .then((dataUrl) => {
         setDownloadLink(dataUrl);
+        console.log(dataUrl);
       })
       .catch((err) => {
         console.log(err);
@@ -69,13 +70,13 @@ export default function Camera() {
         Capture photo
       </button>
       {downloadLink && (
-        <a
-          href={downloadLink}
-          download="captured-image.png"
-          style={{ display: "block", marginTop: "10px" }}
-        >
-          Download Image
-        </a>
+        <Image
+          src={downloadLink}
+          alt="captured-image.png"
+          // style={{ display: "block", marginTop: "10px" }}
+          width={1280}
+          height={720}
+        />
       )}
     </div>
   );
