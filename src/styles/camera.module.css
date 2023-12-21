@@ -5,12 +5,35 @@
 /* .webcam {
   /* Webcamコンポーネントのスタイル */
 /* } */
-
+/* 
 .overlayContainer {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /* 必要に応じて他のスタイルを追加 */
+  height: 100%;
+  width: 100%;
+} */
+
+.overlayContainer {
+  position: absolute;
+  top: 0; /* 上端からの位置 */
+  left: 0; /* 左端からの位置 */
+  height: 100%; /* カメラ映像と同じ高さにする */
+  width: 100%; /* カメラ映像と同じ幅にする */
+  pointer-events: none; /* オーバーレイがクリックイベントを受け取らないようにする */
+}
+
+.imageContainer {
+  > div {
+    /* // ⭐️ Next12未満では span -> div に変更する必要があります。詳細は後ほど説明します。 */
+    position: unset !important;
+  }
+
+  .image {
+    position: relative !important;
+    width: 100% !important;
+    height: unset !important;
+  }
 }

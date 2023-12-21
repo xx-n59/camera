@@ -2,7 +2,7 @@ import React, { useRef, useState, useCallback } from "react";
 import Webcam from "react-webcam";
 import Image from "next/image";
 import Styles from "../styles/camera.module.css";
-import { toPng } from "html-to-image";
+import html2canvas from "html2canvas";
 
 const videoConstraints = {
   width: 1280,
@@ -30,19 +30,25 @@ export default function Camera() {
       return;
     }
 
-    toPng(toImgRef.current, { cacheBust: true })
-      .then((dataUrl) => {
-        setDownloadLink(dataUrl);
-        console.log(dataUrl);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [toImgRef]);
+    //   toPng(toImgRef.current, { cacheBust: true })
+    //     .then((dataUrl) => {
+    //       setDownloadLink(dataUrl);
+    //       console.log(dataUrl);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // }, [toImgRef]);
+    html2canvas(toImgRef.current).then((canvas) => {
+      const dataUrl = canvas.toDataURL("image/png");
+      setDownloadLink(dataUrl);
+      console.log(dataUrl);
+    });
+  }, [toImgRef, setDownloadLink]);
 
   return (
-    <div ref={toImgRef}>
-      <div className={Styles.cameraContainer}>
+    <React.Fragment>
+      <div ref={toImgRef} className={Styles.cameraContainer}>
         <Webcam
           audio={false}
           height={720}
@@ -58,6 +64,9 @@ export default function Camera() {
             alt="Overlay"
             layout="fill"
             objectFit="contain"
+            // width={300}
+            // layout="responsive"
+            // height={100}
           />
         </div>
       </div>
@@ -67,17 +76,19 @@ export default function Camera() {
           capturefull();
         }}
       >
-        Capture photo
+        写真を撮る
       </button>
       {downloadLink && (
-        <Image
-          src={downloadLink}
-          alt="captured-image.png"
-          // style={{ display: "block", marginTop: "10px" }}
-          width={1280}
-          height={720}
-        />
+        <div className={Styles.imageContainer}>
+          <Image
+            className={Styles.image}
+            src={downloadLink}
+            alt="captured-image.png"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
       )}
-    </div>
+    </React.Fragment>
   );
 }

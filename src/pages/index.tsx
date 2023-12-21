@@ -12,7 +12,11 @@ export default function Home() {
   return (
     <>
       <header>{/* <h1>カメラアプリ</h1> */}</header>
-      <Link href="/camera">START</Link>
+      <div className={styles.startbtn}>
+        <Link href="/camera" legacyBehavior>
+          <a className={styles.startlink}>START</a>
+        </Link>
+      </div>
     </>
   );
 }
