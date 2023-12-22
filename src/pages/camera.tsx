@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 import Image from "next/image";
 import Styles from "../styles/camera.module.css";
 import html2canvas from "html2canvas";
-// import storage from "../firebase";
+import storage from "../firebase";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 const videoConstraints = {
@@ -27,37 +27,6 @@ export default function Camera() {
   const toImgRef = useRef<HTMLDivElement>(null);
   const [downloadLink, setDownloadLink] = useState<string | null>(null);
 
-  // const capturefull = useCallback(() => {
-  //   if (toImgRef.current === null) {
-  //     return;
-  //   }
-  //   html2canvas(toImgRef.current).then((canvas) => {
-  //     const dataUrl = canvas.toDataURL("image/png");
-  //     setDownloadLink(dataUrl);
-  //     console.log(dataUrl);
-  //   });
-  // }, [toImgRef, setDownloadLink]);
-
-  // const uploadToFirebase = (dataUrl) => {
-  //   // Base64エンコードされた文字列からBlobを作成
-  //   fetch(dataUrl)
-  //     .then((res) => res.blob())
-  //     .then((blob) => {
-  //       // Firebase Storageの参照を作成
-  //       const storage = getStorage();
-  //       const storageRef = ref(storage, "image/aaa.jpg");
-
-  //       // BlobをFirebase Storageにアップロード
-  //       return uploadBytes(storageRef, blob);
-  //     })
-  //     .then((snapshot) => {
-  //       console.log("画像がアップロードされました。", snapshot);
-  //     })
-  //     .catch((error) => {
-  //       console.error("アップロード中にエラーが発生しました。", error);
-  //     });
-  // };
-
   // ...
   const uploadToFirebase = (url: string) => {
     // Base64エンコードされた文字列からBlobを作成
@@ -66,7 +35,7 @@ export default function Camera() {
       .then((blob) => {
         // Firebase Storageの参照を作成
         const storage = getStorage();
-        const storageRef = ref(storage, "image/aaa.jpg");
+        const storageRef = ref(storage, "image/png");
 
         // BlobをFirebase Storageにアップロード
         return uploadBytes(storageRef, blob);
@@ -86,7 +55,6 @@ export default function Camera() {
     html2canvas(toImgRef.current).then((canvas) => {
       const dataUrl = canvas.toDataURL("image/png");
       setDownloadLink(dataUrl);
-      // ここでアップロード処理を呼び出す
       uploadToFirebase(dataUrl);
     });
   }, [toImgRef, setDownloadLink]);
@@ -95,7 +63,6 @@ export default function Camera() {
     onClick={() => {
       capture();
       capturefull();
-      // ここではアップロード処理を呼び出さない
     }}
   >
     写真を撮る

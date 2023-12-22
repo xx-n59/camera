@@ -26,7 +26,7 @@
   pointer-events: none; /* オーバーレイがクリックイベントを受け取らないようにする */
 }
 
-.captureBtnContainer {
+/* .captureBtnContainer {
   border-radius: 1.25rem;
   background: #515254;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -54,4 +54,4 @@
   line-height: normal;
   text-decoration: none;
   text-align: center;
-}
+} */
