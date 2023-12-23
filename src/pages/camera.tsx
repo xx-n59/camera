@@ -5,10 +5,14 @@ import Styles from "../styles/camera.module.css";
 import html2canvas from "html2canvas";
 import storage from "../firebase";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { ST } from "next/dist/shared/lib/utils";
 
 const videoConstraints = {
-  width: 1200,
-  height: 1000,
+  width: 400,
+  height: 800,
   facingMode: "user",
 };
 
@@ -27,15 +31,16 @@ export default function Camera() {
   const toImgRef = useRef<HTMLDivElement>(null);
   const [downloadLink, setDownloadLink] = useState<string | null>(null);
 
-  // ...
   const uploadToFirebase = (url: string) => {
     // Base64エンコードされた文字列からBlobを作成
     fetch(url)
       .then((res) => res.blob())
       .then((blob) => {
         // Firebase Storageの参照を作成
-        const storage = getStorage();
-        const storageRef = ref(storage, "image/png");
+        // const storage = getStorage();
+        const now = new Date();
+        const getFormattedDate = (date: Date) => date.toISOString();
+        const storageRef = ref(storage, `images/${getFormattedDate(now)}.jpg`);
 
         // BlobをFirebase Storageにアップロード
         return uploadBytes(storageRef, blob);
@@ -71,38 +76,47 @@ export default function Camera() {
   // ...
   return (
     <React.Fragment>
-      <div ref={toImgRef} className={Styles.cameraContainer}>
-        <Webcam
-          audio={false}
-          height={1000}
-          ref={webcamRef}
-          screenshotFormat="image/jpeg"
-          width={1200}
-          videoConstraints={videoConstraints}
-          className={Styles.webcam}
-        />
-        <div className={Styles.overlayContainer}>
-          <Image
-            src="/images/sample.png"
-            alt="Overlay"
-            layout="fill"
-            objectFit="contain"
+      <div className={Styles.body}>
+        <div ref={toImgRef} className={Styles.cameraContainer}>
+          <Webcam
+            audio={false}
+            height={800}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            width={400}
+            videoConstraints={videoConstraints}
+            className={Styles.webcam}
           />
+          <div className={Styles.overlayContainer}>
+            <Image
+              className={Styles.overlayImg}
+              src="/images/sample.png"
+              alt="Overlay"
+              layout="responsive"
+              width={500}
+              height={500}
+              objectFit="contain"
+            />
+          </div>
         </div>
-      </div>
-      <div className={Styles.captureBtnContainer}>
-        <button
-          onClick={() => {
-            capture();
-            capturefull();
-            // OnFileUploadToFirebase();
-          }}
-          className={Styles.captureBtn}
-        >
-          写真を撮る
-        </button>
-      </div>
-      {downloadLink && (
+        <div className={Styles.captureContainer}>
+          <div className={Styles.captureBtnContainer}>
+            <Link href="/result" legacyBehavior>
+              <a>
+                <button
+                  onClick={() => {
+                    capture();
+                    capturefull();
+                    // OnFileUploadToFirebase();
+                  }}
+                  className={Styles.captureBtn}
+                >
+                  <FontAwesomeIcon icon={faCamera} />
+                </button>
+              </a>
+            </Link>
+          </div>
+          {/* {downloadLink && (
         <div className={Styles.imageContainer}>
           <Image
             className={Styles.image}
@@ -112,7 +126,9 @@ export default function Camera() {
             height={1000}
           />
         </div>
-      )}
+      )} */}
+        </div>
+      </div>
     </React.Fragment>
   );
 }

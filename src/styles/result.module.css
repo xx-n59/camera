@@ -1,0 +1,16 @@
+.body {
+  background-color: #ffedb3;
+  text-align: center;
+}
+
+.tolistBtn {
+  background-color: #515254;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.tolist {
+  text-decoration: none;
+  font-family: "Dela Gothic One";
+  color: #ffffff;
+}
