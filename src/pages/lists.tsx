@@ -28,15 +28,17 @@ export default function Lists() {
   }, []);
   return (
     <>
-      <p className={Styles.title}>みんなの写真</p>
+      <div className={Styles.listsContainer}>
+        <p className={Styles.title}>みんなの写真</p>
+      </div>
       <div className={Styles.imgsContainer}>
         {images.map((url) => (
           <Image
             key={url}
             src={url}
             alt="Uploaded Image"
-            width={300}
-            height={250}
+            width={200}
+            height={400}
             className={Styles.imgElement}
           />
         ))}

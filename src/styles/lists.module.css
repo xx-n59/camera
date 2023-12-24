@@ -1,4 +1,21 @@
 .title {
   font-family: "Dela Gothic One";
   color: #515254;
+  font-size: 2rem;
+}
+
+.listsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* .imgsContainer {
+  display: flex;
+  justify-content: center;
+} */
+
+.imgElement {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
 }

@@ -39,7 +39,7 @@ export default function Result() {
         )}
       </div>
       <div className={Styles.tolistBtn}>
-        <Link href="/" legacyBehavior>
+        <Link href="/lists" legacyBehavior>
           <a className={Styles.tolist}>一覧へ</a>
         </Link>
       </div>

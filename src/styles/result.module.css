@@ -3,10 +3,19 @@
   width: 30%;
   margin-left: 35%;
   border-radius: 20px;
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
 }
 
 .tolist {
   text-decoration: none;
   font-family: "Dela Gothic One";
   color: #ffffff;
+  text-align: center;
+}
+
+.imgsContainer {
+  /* display: flex; */
+  text-align: center;
 }
