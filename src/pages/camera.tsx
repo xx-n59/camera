@@ -76,47 +76,46 @@ export default function Camera() {
   // ...
   return (
     <React.Fragment>
-      <div className={Styles.body}>
-        <div ref={toImgRef} className={Styles.cameraContainer}>
-          <Webcam
-            audio={false}
-            height={800}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            width={400}
-            videoConstraints={videoConstraints}
-            className={Styles.webcam}
+      <div ref={toImgRef} className={Styles.cameraContainer}>
+        <Webcam
+          audio={false}
+          height={800}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          width={400}
+          videoConstraints={videoConstraints}
+          className={Styles.webcam}
+        />
+        <div className={Styles.overlayContainer}>
+          <Image
+            className={Styles.overlayImg}
+            src="/images/sample.png"
+            alt="Overlay"
+            layout="responsive"
+            width={500}
+            height={500}
+            objectFit="contain"
           />
-          <div className={Styles.overlayContainer}>
-            <Image
-              className={Styles.overlayImg}
-              src="/images/sample.png"
-              alt="Overlay"
-              layout="responsive"
-              width={500}
-              height={500}
-              objectFit="contain"
-            />
-          </div>
         </div>
-        <div className={Styles.captureContainer}>
-          <div className={Styles.captureBtnContainer}>
-            <Link href="/result" legacyBehavior>
-              <a>
-                <button
-                  onClick={() => {
-                    capture();
-                    capturefull();
-                    // OnFileUploadToFirebase();
-                  }}
-                  className={Styles.captureBtn}
-                >
-                  <FontAwesomeIcon icon={faCamera} />
-                </button>
-              </a>
-            </Link>
-          </div>
-          {/* {downloadLink && (
+      </div>
+      <div className={Styles.captureContainer}>
+        <div className={Styles.captureBtnContainer}>
+          <Link href="/result" legacyBehavior>
+            <a>
+              <button
+                onClick={() => {
+                  capture();
+                  capturefull();
+                  // OnFileUploadToFirebase();
+                }}
+                className={Styles.captureBtn}
+              >
+                <FontAwesomeIcon icon={faCamera} />
+              </button>
+            </a>
+          </Link>
+        </div>
+        {/* {downloadLink && (
         <div className={Styles.imageContainer}>
           <Image
             className={Styles.image}
@@ -127,7 +126,6 @@ export default function Camera() {
           />
         </div>
       )} */}
-        </div>
       </div>
     </React.Fragment>
   );

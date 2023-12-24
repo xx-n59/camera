@@ -2,15 +2,12 @@ import React, { useRef, useState, useCallback, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
-import styled from "styled-components";
+import Styles from "@/styles/lists.module.css";
 import storage from "@/firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Lists() {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
@@ -31,18 +28,8 @@ export default function Home() {
   }, []);
   return (
     <>
-      <header>{/* <h1>カメラアプリ</h1> */}</header>
-      <div className={styles.startbtn}>
-        <Link href="/camera" legacyBehavior>
-          <a className={styles.startlink}>START</a>
-        </Link>
-      </div>
-      <div className={styles.tolistsBtn}>
-        <Link href="/lists" legacyBehavior>
-          <a className={styles.tolists}>みんなの写真を見る</a>
-        </Link>
-      </div>
-      {/* <div className={styles.imgsContainer}>
+      <p className={Styles.title}>みんなの写真</p>
+      <div className={Styles.imgsContainer}>
         {images.map((url) => (
           <Image
             key={url}
@@ -50,10 +37,10 @@ export default function Home() {
             alt="Uploaded Image"
             width={300}
             height={250}
-            className={styles.imgElement}
+            className={Styles.imgElement}
           />
         ))}
-      </div> */}
+      </div>
     </>
   );
 }

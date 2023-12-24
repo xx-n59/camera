@@ -1,12 +1,8 @@
-.body {
-  background-color: #ffedb3;
-  text-align: center;
-}
-
 .tolistBtn {
   background-color: #515254;
   width: 30%;
   margin-left: 35%;
+  border-radius: 20px;
 }
 
 .tolist {
