@@ -29,9 +29,9 @@
   pointer-events: none; /* オーバーレイがクリックイベントを受け取らないようにする */
 }
 
-/* .overlayImg {
-  margin-top: auto;
-} */
+.overlayImg {
+  transform: rotate(90deg);
+}
 
 .captureContainer {
   margin: 5%;

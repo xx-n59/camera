@@ -72,7 +72,6 @@ export default function Camera() {
   >
     写真を撮る
   </button>;
-
   // ...
   return (
     <React.Fragment>

@@ -2,7 +2,7 @@ import React, { useRef, useState, useCallback, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import Styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import styled from "styled-components";
 import storage from "@/firebase";
@@ -32,14 +32,14 @@ export default function Home() {
   return (
     <>
       <header>{/* <h1>カメラアプリ</h1> */}</header>
-      <div className={styles.startbtn}>
+      <div className={Styles.startbtn}>
         <Link href="/camera" legacyBehavior>
-          <a className={styles.startlink}>START</a>
+          <a className={Styles.startlink}>START</a>
         </Link>
       </div>
-      <div className={styles.tolistsBtn}>
+      <div className={Styles.tolistsBtn}>
         <Link href="/lists" legacyBehavior>
-          <a className={styles.tolists}>みんなの写真を見る</a>
+          <a className={Styles.tolists}>みんなの写真を見る</a>
         </Link>
       </div>
       {/* <div className={styles.imgsContainer}>
