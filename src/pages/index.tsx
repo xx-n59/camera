@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <header>{/* <h1>カメラアプリ</h1> */}</header>
       <div className={Styles.startbtn}>
-        <Link href="/camera" legacyBehavior>
+        <Link href="/search" legacyBehavior>
           <a className={Styles.startlink}>START</a>
         </Link>
       </div>
