@@ -86,14 +86,10 @@ export default function Camera() {
           className={Styles.webcam}
         />
         <div className={Styles.overlayContainer}>
-          <Image
+          <img
             className={Styles.overlayImg}
-            src="/images/sample.png"
+            src="/images/chanpon-demo1.png"
             alt="Overlay"
-            layout="responsive"
-            width={500}
-            height={500}
-            objectFit="contain"
           />
         </div>
       </div>

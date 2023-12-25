@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [images, setImages] = useState<string[]>([]);
+  const [isPortrait, setIsPortrait] = useState<boolean>(false);
 
   useEffect(() => {
     const listRef = ref(storage, "images/");
@@ -29,6 +30,7 @@ export default function Home() {
         console.log("Error retrieving images:", error);
       });
   }, []);
+
   return (
     <>
       <header>{/* <h1>カメラアプリ</h1> */}</header>

@@ -22,10 +22,10 @@
 
 .overlayContainer {
   position: absolute;
-  /* top: 0; 上端からの位置 */
-  /* left: 0; 左端からの位置 */
-  /* height: 100%; カメラ映像と同じ高さにする */
-  /* width: 100%; */
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
   pointer-events: none; /* オーバーレイがクリックイベントを受け取らないようにする */
 }
 
