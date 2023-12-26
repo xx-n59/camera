@@ -7,7 +7,7 @@ import { ref, uploadBytes } from "firebase/storage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
-import { toPng } from "html-to-image";
+import { toPng } from "@/lib/es";
 import MentorList from "../../mentor.json";
 import { GetStaticProps } from "next";
 import { GetStaticPaths } from "next";
