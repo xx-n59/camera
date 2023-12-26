@@ -140,7 +140,7 @@ export default function Camera({ mentorImage }: CameraProps) {
           videoConstraints={videoConstraints}
           className={Styles.webcam}
           // mirrored={true}
-          style={{ scale: "-1 1" }}
+          style={{ transform: "rotate(90deg) scaleX(-1)" }}
         />
         <div className={Styles.overlayContainer}>
           <img className={Styles.overlayImg} src={mentorImage} alt="Overlay" />
