@@ -75,14 +75,13 @@ export default function Camera({ mentorImage }: CameraProps) {
       .then((res) => res.blob())
       .then((blob) => {
         // Firebase Storageの参照を作成
-        const storage = getStorage();
+        // const storage = getStorage();
         const now = new Date();
         const getFormattedDate = (date: Date) => date.toISOString();
         const storageRef = ref(storage, `images/${getFormattedDate(now)}.jpg`);
-        //     // BlobをFirebase Storageにアップロード
+        // BlobをFirebase Storageにアップロード
         return uploadBytes(storageRef, blob);
       })
-      //
       .then((snapshot) => {
         console.log("画像がアップロードされました。", snapshot);
         router.push("/result");
@@ -128,7 +127,7 @@ export default function Camera({ mentorImage }: CameraProps) {
   // </button>;
 
   return (
-    <>
+    <div className={Styles.container}>
       <div className={Styles.cameraContainer} ref={toImgRef}>
         <Webcam
           audio={false}
@@ -147,20 +146,20 @@ export default function Camera({ mentorImage }: CameraProps) {
       </div>
       <div className={Styles.captureContainer}>
         <div className={Styles.captureBtnContainer}>
-          <Link href="/result" legacyBehavior>
-            <a>
-              <button
-                onClick={() => {
-                  capture();
-                  capturefull();
-                  // OnFileUploadToFirebase();
-                }}
-                className={Styles.captureBtn}
-              >
-                <FontAwesomeIcon icon={faCamera} />
-              </button>
-            </a>
-          </Link>
+          {/* <Link href="/result" legacyBehavior> */}
+          <a>
+            <button
+              onClick={() => {
+                capture();
+                capturefull();
+                // OnFileUploadToFirebase();
+              }}
+              className={Styles.captureBtn}
+            >
+              <FontAwesomeIcon icon={faCamera} />
+            </button>
+          </a>
+          {/* </Link> */}
         </div>
         {/* {downloadLink && (
           <div className={Styles.imageContainer}>
@@ -174,6 +173,6 @@ export default function Camera({ mentorImage }: CameraProps) {
           </div>
         )} */}
       </div>
-    </>
+    </div>
   );
 }

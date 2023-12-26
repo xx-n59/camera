@@ -33,8 +33,8 @@ export default function Result() {
           <Image
             src={image}
             alt="Uploaded Image"
-            height={322}
-            width={640}
+            height={600}
+            width={800}
             // layout="responsive"
           />
         )}
