@@ -1,7 +1,7 @@
 {
   "mentorLists": [
     { "id": 1, "name": "ちゃんぽん", "path": "/images/chanpon1.png" },
-    { "id": 2, "name": "あお", "path": "/images/ao1.png" },
+    { "id": 2, "name": "あお", "path": "/images/ao2.png" },
     { "id": 3, "name": "エミリー", "path": "/images/emily1.png" },
     { "id": 4, "name": "ゆーと", "path": "/images/yuto1.png" },
     { "id": 5, "name": "はらきよ", "path": "/images/harakiyo1.png" },
