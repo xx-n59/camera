@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params?.id;
   const mentor = MentorList.mentorLists.find((m) => m.id.toString() === id);
 
-  // メンターが見つからない場合は、空のpropsを返す
   if (!mentor) {
     return { props: {} };
   }
