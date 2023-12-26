@@ -37,8 +37,8 @@ export default function Lists() {
             key={url}
             src={url}
             alt="Uploaded Image"
-            width={200}
-            height={400}
+            width={640}
+            height={322}
             className={Styles.imgElement}
           />
         ))}

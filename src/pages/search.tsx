@@ -8,12 +8,13 @@ import Link from "next/link";
 
 export default function Search() {
   return (
-    <div>
-      <ul>
+    <div className={Styles.mentorContainer}>
+      <p className={Styles.mentorTitle}>メンターを選択</p>
+      <ul className={Styles.lists}>
         {MentorList.mentorLists.map((mentor) => (
           <li key={mentor.id}>
             <Link href={`/camera/${mentor.id}`} legacyBehavior>
-              <a>{mentor.name}</a>
+              <a className={Styles.name}>{mentor.name}</a>
             </Link>
           </li>
         ))}

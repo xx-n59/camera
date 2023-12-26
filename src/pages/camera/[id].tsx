@@ -71,19 +71,18 @@ export default function Camera({ mentorImage }: CameraProps) {
   const [downloadLink, setDownloadLink] = useState<string | null>(null);
 
   const uploadToFirebase = (url: string) => {
-    // Base64エンコードされた文字列からBlobを作成
     fetch(url)
       .then((res) => res.blob())
       .then((blob) => {
         // Firebase Storageの参照を作成
-        // const storage = getStorage();
+        const storage = getStorage();
         const now = new Date();
         const getFormattedDate = (date: Date) => date.toISOString();
         const storageRef = ref(storage, `images/${getFormattedDate(now)}.jpg`);
-
-        // BlobをFirebase Storageにアップロード
+        //     // BlobをFirebase Storageにアップロード
         return uploadBytes(storageRef, blob);
       })
+      //
       .then((snapshot) => {
         console.log("画像がアップロードされました。", snapshot);
         router.push("/result");
@@ -104,7 +103,7 @@ export default function Camera({ mentorImage }: CameraProps) {
   //   });
   // }, [toImgRef, setDownloadLink]);
 
-  const capturefull = useCallback(() => {
+  const capturefull = () => {
     if (toImgRef.current === null) {
       return;
     }
@@ -117,9 +116,9 @@ export default function Camera({ mentorImage }: CameraProps) {
       .catch((err) => {
         console.log(err);
       });
-  }, [toImgRef]);
+  };
 
-  // <button
+  // // <button
   //   onClick={() => {
   //     capture();
   //     capturefull();
@@ -129,8 +128,8 @@ export default function Camera({ mentorImage }: CameraProps) {
   // </button>;
 
   return (
-    <React.Fragment>
-      <div ref={toImgRef} className={Styles.cameraContainer}>
+    <>
+      <div className={Styles.cameraContainer} ref={toImgRef}>
         <Webcam
           audio={false}
           // height={800}
@@ -148,33 +147,33 @@ export default function Camera({ mentorImage }: CameraProps) {
       </div>
       <div className={Styles.captureContainer}>
         <div className={Styles.captureBtnContainer}>
-          {/* <Link href="/result" legacyBehavior> */}
-          <a>
-            <button
-              onClick={() => {
-                capture();
-                capturefull();
-                // OnFileUploadToFirebase();
-              }}
-              className={Styles.captureBtn}
-            >
-              <FontAwesomeIcon icon={faCamera} />
-            </button>
-          </a>
-          {/* </Link> */}
+          <Link href="/result" legacyBehavior>
+            <a>
+              <button
+                onClick={() => {
+                  capture();
+                  capturefull();
+                  // OnFileUploadToFirebase();
+                }}
+                className={Styles.captureBtn}
+              >
+                <FontAwesomeIcon icon={faCamera} />
+              </button>
+            </a>
+          </Link>
         </div>
         {/* {downloadLink && (
-        <div className={Styles.imageContainer}>
-          <Image
-            className={Styles.image}
-            src={downloadLink}
-            alt="captured-image.png"
-            width={1200}
-            height={1000}
-          />
-        </div>
-      )} */}
+          <div className={Styles.imageContainer}>
+            <Image
+              className={Styles.image}
+              src={downloadLink}
+              alt="captured-image.png"
+              width={1200}
+              height={1000}
+            />
+          </div>
+        )} */}
       </div>
-    </React.Fragment>
+    </>
   );
 }

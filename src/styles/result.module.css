@@ -1,11 +1,12 @@
 .tolistBtn {
   background-color: #515254;
-  width: 30%;
-  margin-left: 35%;
+  width: 10%;
+  margin-left: 45%;
   border-radius: 20px;
   display: flex;
-  /* text-align: center; */
+  text-align: center;
   justify-content: center;
+  margin-top: 10%;
 }
 
 .tolist {
@@ -17,5 +18,16 @@
 
 .imgsContainer {
   /* display: flex; */
+  text-align: center;
+  transform: rotate(90deg);
+}
+
+.newImgContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.body {
   text-align: center;
 }

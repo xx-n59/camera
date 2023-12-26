@@ -28,15 +28,14 @@ export default function Result() {
 
   return (
     <div className={Styles.body}>
-      <div>
+      <div className={Styles.newImgContainer}>
         {image && (
           <Image
             src={image}
             alt="Uploaded Image"
-            height={800}
-            width={400}
-            layout="responsive"
-            style={{ transform: "rotate(90deg)" }}
+            height={322}
+            width={640}
+            // layout="responsive"
           />
         )}
       </div>

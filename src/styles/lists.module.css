@@ -7,12 +7,15 @@
 .listsContainer {
   display: flex;
   justify-content: center;
+  /* text-align: center; */
+  /* margin-left: 40%; */
 }
 
-/* .imgsContainer {
+.imgsContainer {
   display: flex;
   justify-content: center;
-} */
+  text-align: center;
+}
 
 .imgElement {
   margin-left: 25%;

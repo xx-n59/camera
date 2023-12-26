@@ -1,0 +1,19 @@
+.mentorTitle {
+  font-family: "Dela Gothic One";
+  color: #515254;
+  font-size: 2rem;
+}
+
+.mentorContainer {
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+}
+
+.lists {
+  list-style: none;
+}
+
+.name {
+  font-size: 1rem;
+}
