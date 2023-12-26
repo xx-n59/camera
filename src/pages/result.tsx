@@ -4,6 +4,7 @@ import Image from "next/image";
 import storage from "@/firebase";
 import Styles from "../styles/result.module.css";
 import Link from "next/link";
+import { transform } from "next/dist/build/swc";
 
 export default function Result() {
   const [image, setImage] = useState<string | null>(null);
@@ -35,6 +36,7 @@ export default function Result() {
             height={800}
             width={400}
             layout="responsive"
+            style={{ transform: "rotate(90deg)" }}
           />
         )}
       </div>

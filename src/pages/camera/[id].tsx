@@ -17,8 +17,8 @@ import { GetStaticProps } from "next";
 import { GetStaticPaths } from "next";
 
 const videoConstraints = {
-  width: 400,
-  height: 800,
+  // width: 400,
+  // height: 800,
   facingMode: "user",
 };
 
@@ -133,10 +133,10 @@ export default function Camera({ mentorImage }: CameraProps) {
       <div ref={toImgRef} className={Styles.cameraContainer}>
         <Webcam
           audio={false}
-          height={800}
+          // height={800}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={400}
+          // width={400}
           videoConstraints={videoConstraints}
           className={Styles.webcam}
           // mirrored={true}

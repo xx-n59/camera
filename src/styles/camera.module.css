@@ -1,13 +1,17 @@
 .cameraContainer {
   position: relative;
-  /* width: 400px;
-  height: 800px; */
+  max-width: 100%;
+  width: 600px;
+  /* height: 800px; */
+  height: 90%;
   display: flex;
   align-items: flex-end;
 }
 
 .webcam {
   /* Webcamコンポーネントのスタイル */
+  /* width: 600px; */
+  /* height: 800px; */
   width: 100%;
   height: 100%;
 }
@@ -24,7 +28,7 @@
 
 .overlayContainer {
   position: absolute;
-  bottom: 10%;
+  bottom: 40%;
   left: 20%;
   /* top: 0;
   left: 0;
