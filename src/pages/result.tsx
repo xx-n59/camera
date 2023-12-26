@@ -4,7 +4,6 @@ import Image from "next/image";
 import storage from "@/firebase";
 import Styles from "../styles/result.module.css";
 import Link from "next/link";
-import { transform } from "next/dist/build/swc";
 
 export default function Result() {
   const [image, setImage] = useState<string | null>(null);
