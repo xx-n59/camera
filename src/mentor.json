@@ -14,6 +14,7 @@
     { "id": 12, "name": "ノース", "path": "/images/north1.png" },
     { "id": 13, "name": "ピナ", "path": "/images/pina1.png" },
     { "id": 14, "name": "うりこ", "path": "/images/urico1.png" },
-    { "id": 15, "name": "ゆるゆる", "path": "/images/yuruyuru1.png" }
+    { "id": 15, "name": "ゆるゆる", "path": "/images/yuruyuru1.png" },
+    { "id": 16, "name": "こなん", "path": "/images/konan1.png" }
   ]
 }
