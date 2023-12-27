@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Styles from "@/styles/lists.module.css";
 import storage from "@/firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
@@ -27,6 +28,7 @@ export default function Lists() {
     <>
       <div className={Styles.listsContainer}>
         <p className={Styles.title}>みんなの写真</p>
+        <Link href="/">戻る</Link>
       </div>
       <div className={Styles.imgsContainer}>
         {images.map((url) => (
