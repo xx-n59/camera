@@ -6,7 +6,11 @@ import Link from "next/link";
 export default function Search() {
   return (
     <div className={Styles.mentorContainer}>
-      <p className={Styles.mentorTitle}>メンターを選択</p>
+      <p className={Styles.mentorTitle}>
+        メンターを選択
+        <br />
+        2パターンあるよ!
+      </p>
       <ul className={Styles.lists}>
         {MentorList.mentorLists.map((mentor) => (
           <li key={mentor.id}>

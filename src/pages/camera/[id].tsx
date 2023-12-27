@@ -30,7 +30,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params?.id;
   const mentor = MentorList.mentorLists.find((m) => m.id.toString() === id);
-
   if (!mentor) {
     return { props: {} };
   }
