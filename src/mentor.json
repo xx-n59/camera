@@ -1,20 +1,279 @@
 {
   "mentorLists": [
-    { "id": 1, "name": "ちゃんぽん", "path": "/images/chanpon1.png" },
-    { "id": 2, "name": "あお", "path": "/images/ao2.png" },
-    { "id": 3, "name": "エミリー", "path": "/images/emily1.png" },
-    { "id": 4, "name": "ゆーと", "path": "/images/yuto1.png" },
-    { "id": 5, "name": "はらきよ", "path": "/images/harakiyo1.png" },
-    { "id": 6, "name": "かおねえ", "path": "/images/kaonee1.png" },
-    { "id": 7, "name": "かわすけ", "path": "/images/kawasuke1.png" },
-    { "id": 8, "name": "けーちゃん", "path": "/images/keichan2.png" },
-    { "id": 9, "name": "けいたん", "path": "/images/keitan1.png" },
-    { "id": 10, "name": "きょーりゅー", "path": "/images/kyouryuu1.png" },
-    { "id": 11, "name": "なんば", "path": "/images/nanba1.png" },
-    { "id": 12, "name": "ノース", "path": "/images/north1.png" },
-    { "id": 13, "name": "ピナ", "path": "/images/pina1.png" },
-    { "id": 14, "name": "うりこ", "path": "/images/urico1.png" },
-    { "id": 15, "name": "ゆるゆる", "path": "/images/yuruyuru1.png" },
-    { "id": 16, "name": "こなん", "path": "/images/konan1.png" }
+    {
+      "id": 1,
+      "name": "ちゃんぽん",
+      "path": "/images/chanpon1.png",
+      "width": 100
+    },
+    {
+      "id": 2,
+      "name": "あお",
+      "path": "/images/ao2.png",
+      "width": 100
+    },
+    {
+      "id": 3,
+      "name": "エミリー",
+      "path": "/images/emily1.png",
+      "width": 100
+    },
+    {
+      "id": 4,
+      "name": "ゆーと",
+      "path": "/images/yuto1.png",
+      "width": 100
+    },
+    {
+      "id": 5,
+      "name": "はらきよ",
+      "path": "/images/harakiyo1.png",
+      "width": 100
+    },
+    {
+      "id": 6,
+      "name": "かおねえ",
+      "path": "/images/kaonee1.png",
+      "width": 100
+    },
+    {
+      "id": 7,
+      "name": "かわすけ",
+      "path": "/images/kawasuke1.png",
+      "width": 100
+    },
+    {
+      "id": 8,
+      "name": "けーちゃん",
+      "path": "/images/keichan2.png",
+      "width": 100
+    },
+    {
+      "id": 9,
+      "name": "けいたん",
+      "path": "/images/keitan2.png",
+      "width": 100
+    },
+    {
+      "id": 10,
+      "name": "きょーりゅー",
+      "path": "/images/kyouryuu1.png",
+      "width": 100
+    },
+    {
+      "id": 11,
+      "name": "なんば",
+      "path": "/images/nanba1.png",
+      "width": 100
+    },
+    {
+      "id": 12,
+      "name": "ノース",
+      "path": "/images/north1.png",
+      "width": 100
+    },
+    {
+      "id": 13,
+      "name": "ピナ",
+      "path": "/images/pina1.png",
+      "width": 100
+    },
+    {
+      "id": 14,
+      "name": "うりこ",
+      "path": "/images/urico1.png",
+      "width": 100
+    },
+    {
+      "id": 15,
+      "name": "ゆるゆる",
+      "path": "/images/yuruyuru1.png",
+      "width": 100
+    },
+    {
+      "id": 16,
+      "name": "こなん",
+      "path": "/images/konan1.png",
+      "width": 100
+    },
+    {
+      "id": 17,
+      "name": "かいも",
+      "path": "/images/kaimo1.png",
+      "width": 100
+    },
+    {
+      "id": 18,
+      "name": "ことり",
+      "path": "/images/kotori1.png",
+      "width": 100
+    },
+    {
+      "id": 19,
+      "name": "らっしーね",
+      "path": "/images/rasshiine1.png",
+      "width": 100
+    },
+    {
+      "id": 20,
+      "name": "めんちゃん",
+      "path": "/images/menchan1.png",
+      "width": 100
+    },
+    {
+      "id": 21,
+      "name": "さくこ",
+      "path": "/images/sakuko1.png",
+      "width": 100
+    },
+    {
+      "id": 22,
+      "name": "ちゃんぽん2",
+      "path": "/images/chanpon2.png",
+      "width": 100
+    },
+    {
+      "id": 23,
+      "name": "あお2",
+      "path": "/images/ao1.png",
+      "width": 40,
+      "right": 0,
+      "bottom": "10%"
+    },
+    {
+      "id": 24,
+      "name": "エミリー2",
+      "path": "/images/emily2.png",
+      "width": 40,
+      "right": 0,
+      "bottom": "10%"
+    },
+    {
+      "id": 25,
+      "name": "ゆーと2",
+      "path": "/images/yuto2.png",
+      "width": 30,
+      "right": 0,
+      "bottom": "10%"
+    },
+    {
+      "id": 26,
+      "name": "はらきよ2",
+      "path": "/images/harakiyo2.png",
+      "width": 60,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 27,
+      "name": "かおねえ2",
+      "path": "/images/kaonee2.png",
+      "width": 40,
+      "right": 0,
+      "bottom": "30%"
+    },
+    {
+      "id": 28,
+      "name": "かわすけ2",
+      "path": "/images/kawasuke2.png",
+      "width": 40,
+      "left": "30%",
+      "bottom": "0"
+    },
+    {
+      "id": 29,
+      "name": "けーちゃん2",
+      "path": "/images/keichan1.png",
+      "width": 40,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 30,
+      "name": "けいたん2",
+      "path": "/images/keitan1.png",
+      "width": 60,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 31,
+      "name": "きょーりゅー2",
+      "path": "/images/kyouryou2.png",
+      "width": 50,
+      "containerwidth": "position: absolute; left: 30%; bottom: 0; width: 40%; pointer-events: none;"
+    },
+    {
+      "id": 32,
+      "name": "なんば2",
+      "path": "/images/nanba2.png",
+      "width": 50,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 33,
+      "name": "ノース2",
+      "path": "/images/north2.png",
+      "width": "width: 50%",
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 34,
+      "name": "うりこ",
+      "path": "/images/urico2.png",
+      "width": 50,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 35,
+      "name": "ゆるゆる2",
+      "path": "/images/yuruyuru2.png",
+      "width": 50,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 36,
+      "name": "こなん2",
+      "path": "/images/konan2.png",
+      "width": 40,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 38,
+      "name": "ことり2",
+      "path": "/images/kotori2.png",
+      "width": 60,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 39,
+      "name": "らっしーね2",
+      "path": "/images/rasshiine2.png",
+      "width": 120,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 40,
+      "name": "めんちゃん2",
+      "path": "/images/menchan2.png",
+      "width": 60,
+      "left": "30%",
+      "bottom": 0
+    },
+    {
+      "id": 41,
+      "name": "さくこ2",
+      "path": "/images/sakuko2.png",
+      "width": 60,
+      "left": "30%",
+      "bottom": 0
+    }
   ]
 }

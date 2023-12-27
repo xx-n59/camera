@@ -19,7 +19,7 @@ const videoConstraints = {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // mentor.jsonからすべてのmentorのidを取得してpathsを生成
+  // mentor.jsonからすべてのmentorのidを取得してpath
   const paths = MentorList.mentorLists.map((mentor) => ({
     params: { id: mentor.id.toString() },
   }));
@@ -39,15 +39,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       mentorName: mentor.name,
       mentorImage: mentor.path,
+      mentorWidth: mentor.width,
+      // men
     },
   };
 };
 
 type CameraProps = {
   mentorImage: string;
+  mentorWidth: number;
 };
 
-export default function Camera({ mentorImage }: CameraProps) {
+export default function Camera({ mentorImage, mentorWidth }: CameraProps) {
   const router = useRouter();
   const webcamRef = React.useRef<Webcam>(null);
   const [imgSrc, setImgSrc] = useState<string | null>(null);
@@ -137,7 +140,12 @@ export default function Camera({ mentorImage }: CameraProps) {
           style={{ scale: "-1 1" }}
         />
         <div className={Styles.overlayContainer}>
-          <img className={Styles.overlayImg} src={mentorImage} alt="Overlay" />
+          <img
+            className={Styles.overlayImg}
+            src={mentorImage}
+            alt="Overlay"
+            style={{ width: `${mentorWidth}%` }}
+          />
         </div>
       </div>
       <div className={Styles.captureContainer}>

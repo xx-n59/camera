@@ -43,11 +43,11 @@
   width: 40%;
   pointer-events: none; /* オーバーレイがクリックイベントを受け取らないようにする */
 }
-
+/* 
 .overlayImg {
   /* transform: rotate(90deg); */
-  width: 100%;
-}
+/* width: 100%; */
+/* }  */
 
 .captureContainer {
   margin: 5%;
