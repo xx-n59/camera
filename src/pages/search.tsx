@@ -7,7 +7,7 @@ export default function Search() {
   return (
     <div className={Styles.mentorContainer}>
       <p className={Styles.mentorTitle}>
-        メンターを選択
+        メンターを選択しよう！
         <br />
         2パターンあるよ!
       </p>
