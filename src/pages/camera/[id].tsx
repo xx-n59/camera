@@ -164,6 +164,11 @@ export default function Camera({ mentorImage, mentorWidth }: CameraProps) {
           </a>
           {/* </Link> */}
         </div>
+        <div>
+          <p className={Styles.caution}>
+            画像のアップロードに時間がかかるよ！ボタン押したら待っててね！
+          </p>
+        </div>
         {/* {downloadLink && (
           <div className={Styles.imageContainer}>
             <Image
