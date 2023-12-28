@@ -39,8 +39,10 @@ export default function Result() {
         )}
       </div>
       <div className={Styles.tolistBtn}>
-        <Link href="/lists" legacyBehavior>
-          <a className={Styles.tolist}>一覧へ</a>
+        {/* <Link href="/lists" legacyBehavior> */}
+        {/* <a className={Styles.tolist}>一覧へ</a> */}
+        <Link href="/" legacyBehavior>
+          <a className={Styles.tolist}>はじめに戻る</a>
         </Link>
       </div>
     </div>

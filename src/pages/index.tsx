@@ -40,9 +40,9 @@ export default function Home() {
         </Link>
       </div>
       <div className={Styles.tolistsBtn}>
-        <Link href="/lists" legacyBehavior>
+        {/* <Link href="/lists" legacyBehavior>
           <a className={Styles.tolists}>みんなの写真を見る</a>
-        </Link>
+        </Link> */}
       </div>
       {/* <div className={styles.imgsContainer}>
         {images.map((url) => (
