@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Styles from "@/styles/lists.module.css";
 import storage from "@/firebase";
-import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 
 export default function Lists() {
   const [images, setImages] = useState<string[]>([]);
@@ -20,6 +20,7 @@ export default function Lists() {
       .then((urls) => {
         setImages(urls);
       })
+
       .catch((error) => {
         console.log("Error retrieving images:", error);
       });
